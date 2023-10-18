@@ -3,6 +3,14 @@
 ## Project Summary 
 This project configures AKS to leverage LetsEncrypt.org and automatically obtain an SSL certificate for your domain. The certificate will be installed on Application Gateway, performing SSL/TLS termination for your AKS cluster. The setup described here uses the cert-manager Kubernetes add-on, which automates the creation and management of certificates.
 
+## Prerequisites:
+Before you get started, make sure you have the following prerequisites set:
+
+- Azure subscription and CLI installed.
+- Azure Resource Group
+- Azure Kubernetes Service (AKS) cluster set up.
+- Helm chart installed.
+
 ## Project Scope
 
 - Fix not properly secured S3 buckets: Lambda functions can be used to monitor S3 bucket access and enforce security policies, such as preventing public access, 
