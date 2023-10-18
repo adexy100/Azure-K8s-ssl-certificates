@@ -13,7 +13,7 @@ Before you get started, make sure you have the following prerequisites set:
 - I also assume you already have a DNS name or how to set up a temporary one provided by Azure (test.westeurope.cloudapp.azure.com for example).
 
 ## Project Scope
-#1. Install an “Ingress Controller”
+### 1. Install an “Ingress Controller”
 - You will need an existing application running and have a “Service” for your own application, making it available to other pods in the cluster.
 - Install the command-line tool “kubectl” on your machine to execute commands on a Kubernetes cluster. Configure kubectl to talk to your cluster.
 - I also assume you already have a DNS name or how to set up a temporary one provided by Azure (test.westeurope.cloudapp.azure.com for example).
