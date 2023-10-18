@@ -1,7 +1,5 @@
 # Azure-K8s-ssl-certificates
 
-# AWS Ninja
-
 ## Project Summary 
 
 Azure-K8s-ssl-certificates
