@@ -20,3 +20,22 @@ helm init
 ```
 ### 2.  Install Cert-Manager
 Cert-Manager is a Kubernetes-native certificate management controller that automates the issuance and renewal of SSL certificates. Install it using Helm:
+```
+# Label the ingress-basic namespace to disable resource validation
+kubectl label namespace ingress-basic cert-manager.io/disable-validation=true
+
+# Add the Jetstack Helm repository
+helm repo add jetstack https://charts.jetstack.io
+
+# Update your local Helm chart repository cache
+helm repo update
+
+# Install the cert-manager Helm chart
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace ingress-basic \
+  --version v1.8.2 \
+  --set installCRDs=true
+```
+
+
