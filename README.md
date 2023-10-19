@@ -15,6 +15,8 @@ Before you get started, make sure you have the following prerequisites set:
 ## Project Scope
 ### 1.  Install and Configure Helm
 Helm is a package manager for Kubernetes. You'll use it to install Cert-Manager and Nginx Ingress Controller. If you haven't already, install Helm and Tiller
-- ``` helm init ``` -
+```
+helm init
+```
 ### 2.  Install Cert-Manager
 Cert-Manager is a Kubernetes-native certificate management controller that automates the issuance and renewal of SSL certificates. Install it using Helm:
