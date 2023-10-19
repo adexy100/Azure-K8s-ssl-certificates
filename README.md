@@ -37,5 +37,25 @@ helm install \
   --version v1.8.2 \
   --set installCRDs=true
 ```
-
+### 2.  Create a ClusterIssuer:
+- Create a ClusterIssuer that tells Cert-Manager to use Let's Encrypt. Create a YAML file (e.g., cluster-issuer.yaml) with the following content:
+  ```
+  apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt
+spec:
+  acme:
+    # The ACME server URL
+    server: https://acme-v02.api.letsencrypt.org/directory
+    # Email address used for ACME registration
+    email: dkalyanreddy@gmail.com
+    # Name of a secret used to store the ACME account private key
+    privateKeySecretRef:
+      name: letsencrypt
+    solvers:
+      - http01:
+          ingress:
+            class: nginx
+    ```
 
