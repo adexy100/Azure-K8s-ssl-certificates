@@ -37,7 +37,7 @@ helm install \
   --version v1.8.2 \
   --set installCRDs=true
 ```
-### 2.  Create a ClusterIssuer:
+### 3.  Create a ClusterIssuer:
 - Create a ClusterIssuer that tells Cert-Manager to use Let's Encrypt. Create a YAML file (e.g., cluster-issuer.yaml) with the following content:
 ```yaml
 apiVersion: cert-manager.io/v1
@@ -58,7 +58,7 @@ spec:
           ingress:
             class: nginx
 ```
-### 2.  Create an Ingress Resource:
+### 4.  Create an Ingress Resource:
 Create an Ingress resource that defines how traffic should be routed to your application and where the SSL certificate should be applied. Create a YAML file (e.g., ingress.yaml) with the following content:
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -103,4 +103,12 @@ spec:
   ```
   kubectl apply -f ingress.yaml
   ```
+### 5.  Verify Certificate Issuance:
+Cert-Manager will automatically request and manage your Let's Encrypt SSL certificates. Certificate Request, Generation, Approal and Download and be ready might take from 1 hour to couple of days if we make any mistakes and also fail. Monitor the Certificate resource to see the certificate's status:
+```
+  kubectl get certificates
+```
+After Cert-Manager has issued the SSL certificate, your application should be accessible over HTTPS. Ensure that your DNS is correctly configured to point to the AKS public IP.
 
+[Local Desktop - Install Azure CLI and Azure AKS CLI]"https://github.com/stacksimplify/azure-aks-kubernetes-masterclass/blob/master/01-Create-AKS-Cluster/README.md#step-06-local-desktop---install-azure-cli-and-azure-aks-cli"
+[Running the sample]"https://github.com/stacksimplify/azure-aks-kubernetes-masterclass/blob/master/14-Ingress-SSL-with-LetsEncrypt/README.md"
