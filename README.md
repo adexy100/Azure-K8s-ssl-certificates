@@ -98,5 +98,8 @@ spec:
     secretName: sapp2-kubeoncloud-secret
 
 ```
-
+- Apply this configuration to your cluster:
+  ```
+  kubectl apply -f ingress.yaml
+  ```
 
