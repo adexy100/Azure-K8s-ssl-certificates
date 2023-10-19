@@ -110,5 +110,6 @@ Cert-Manager will automatically request and manage your Let's Encrypt SSL certif
 ```
 After Cert-Manager has issued the SSL certificate, your application should be accessible over HTTPS. Ensure that your DNS is correctly configured to point to the AKS public IP.
 
-[Local Desktop - Install Azure CLI and Azure AKS CLI]"https://github.com/stacksimplify/azure-aks-kubernetes-masterclass/blob/master/01-Create-AKS-Cluster/README.md#step-06-local-desktop---install-azure-cli-and-azure-aks-cli"
-[Running the sample]"https://github.com/stacksimplify/azure-aks-kubernetes-masterclass/blob/master/14-Ingress-SSL-with-LetsEncrypt/README.md"
+[Local Desktop - Install Azure CLI and Azure AKS CLI](https://github.com/stacksimplify/azure-aks-kubernetes-masterclass/blob/master/01-Create-AKS-Cluster/README.md#step-06-local-desktop---install-azure-cli-and-azure-aks-cli)
+
+[Running the sample](https://github.com/stacksimplify/azure-aks-kubernetes-masterclass/blob/master/14-Ingress-SSL-with-LetsEncrypt/README.md)
