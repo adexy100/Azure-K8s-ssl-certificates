@@ -6,18 +6,15 @@ This project configures AKS to leverage LetsEncrypt.org and automatically obtain
 ## Prerequisites:
 Before you get started, make sure you have the following prerequisites set:
 
-- Azure subscription and CLI installed.
-- You need an existing Kubernetes cluster running on Azure (AKS).
-- You will need an existing application running and have a “Service” for your own application, making it available to other pods in the cluster.
-- Install the command-line tool “kubectl” on your machine to execute commands on a Kubernetes cluster. Configure kubectl to talk to your cluster.
-- I also assume you already have a DNS name or how to set up a temporary one provided by Azure (test.westeurope.cloudapp.azure.com for example).
+- An Azure Kubernetes Service (AKS) cluster.
+- A custom domain that you own, with DNS control to point to your AKS cluster's public IP.
+- Azure CLI installed and authenticated.
+- kubectl (Kubernetes command-line tool) installed and configured to manage your AKS cluster.
+- Ensure that your web application is deployed to your AKS cluster and that it's accessible via a public IP
 
 ## Project Scope
-### 1. Install an “Ingress Controller”
-- You will need an existing application running and have a “Service” for your own application, making it available to other pods in the cluster.
-- Install the command-line tool “kubectl” on your machine to execute commands on a Kubernetes cluster. Configure kubectl to talk to your cluster.
-- I also assume you already have a DNS name or how to set up a temporary one provided by Azure (test.westeurope.cloudapp.azure.com for example).
-
-## High Level Design
-
-![ssl design](<azure vm and web server.PNG>)
+### 1.  Install and Configure Helm
+Helm is a package manager for Kubernetes. You'll use it to install Cert-Manager and Nginx Ingress Controller. If you haven't already, install Helm and Tiller
+``` helm init ```
+### 2.  Install Cert-Manager
+Cert-Manager is a Kubernetes-native certificate management controller that automates the issuance and renewal of SSL certificates. Install it using Helm:
