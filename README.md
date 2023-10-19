@@ -59,6 +59,7 @@ spec:
             class: nginx
 ```
 ### 2.  Create an Ingress Resource:
+Create an Ingress resource that defines how traffic should be routed to your application and where the SSL certificate should be applied. Create a YAML file (e.g., ingress.yaml) with the following content:
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
