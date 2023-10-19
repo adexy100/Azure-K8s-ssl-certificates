@@ -39,8 +39,8 @@ helm install \
 ```
 ### 2.  Create a ClusterIssuer:
 - Create a ClusterIssuer that tells Cert-Manager to use Let's Encrypt. Create a YAML file (e.g., cluster-issuer.yaml) with the following content:
-  ```
-  apiVersion: cert-manager.io/v1
+```yaml
+apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
   name: letsencrypt
@@ -57,5 +57,5 @@ spec:
       - http01:
           ingress:
             class: nginx
-    ```
+```
 
